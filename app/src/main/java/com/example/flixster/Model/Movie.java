@@ -13,6 +13,7 @@ public class Movie {
         String title;
         String overView;
         String posterPath;
+        Double voteAverage;
         String backdropPath;
 
         //required by parcel
@@ -23,6 +24,7 @@ public class Movie {
                 this.title = jsonObject.getString("title");
                 this.overView = jsonObject.getString("overview");
                 this.posterPath = jsonObject.getString("poster_path");
+                this.voteAverage = jsonObject.getDouble("vote_average");
                 this.backdropPath = jsonObject.getString("backdrop_path");
         }
 
@@ -49,5 +51,9 @@ public class Movie {
 
         public String getBackdropPath() {
                 return String.format("https://image.tmdb.org/t/p/w342/%s", backdropPath);
+        }
+
+        public Double getVoteAverage() {
+                return voteAverage;
         }
 }
