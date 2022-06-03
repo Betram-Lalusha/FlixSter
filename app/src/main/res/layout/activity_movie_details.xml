@@ -50,7 +50,21 @@
         android:onClick="goToTrailer"
         app:layout_constraintBottom_toTopOf="@+id/tvTitle2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToTrailer"
+        android:text="Play Trailer"
+        app:layout_constraintBottom_toTopOf="@+id/tvTitle2"
+        app:layout_constraintEnd_toEndOf="@+id/posterDetail"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/posterDetail"
+        app:layout_constraintVertical_bias="0.569" />
 </androidx.constraintlayout.widget.ConstraintLayout>
