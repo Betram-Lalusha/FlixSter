@@ -15,6 +15,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster.Model.Movie;
@@ -69,7 +70,14 @@ public class MovieDetailsActivity extends AppCompatActivity {
         rbVoteAverage.setRating(voteAverage);
 
         //display image
-        Glide.with(this).load(movie.getBackdropPath()).into(posterDetail);
+        int radius = 30;
+        int margin = 10;
+        Glide.with(this)
+                .load(movie.getBackdropPath())
+                .placeholder(R.drawable.imageloading)
+                .error(R.drawable.errorocurred)
+                .centerCrop()
+                .into(posterDetail);
 
         //get video endpoint
         AsyncHttpClient asyncHttpClient = new AsyncHttpClient();

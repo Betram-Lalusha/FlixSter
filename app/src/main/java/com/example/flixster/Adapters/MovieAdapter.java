@@ -75,7 +75,13 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
             } else {
                 imageUrl = movie.getPosterPath();
             }
-            Glide.with(context).load(imageUrl).into(tvImage);
+
+            Glide.with(context)
+                    .load(imageUrl)
+                    .centerCrop()
+                    .placeholder(R.drawable.imageloading)
+                    .error(R.drawable.errorocurred)
+                    .into(tvImage);
         }
 
         //when user clicks a movie, take user to movie details
@@ -86,7 +92,7 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
                 Movie movie = movies.get(position);
                 Intent intent = new Intent(context, MovieDetailsActivity.class);
                 intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
-                //show movie detials
+                //show movie details
                 context.startActivity(intent);
             }
         }
