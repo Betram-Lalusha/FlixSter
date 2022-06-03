@@ -10,6 +10,8 @@ import java.util.List;
 
 @Parcel
 public class Movie {
+        int id;
+        String key;
         String title;
         String overView;
         String posterPath;
@@ -20,7 +22,13 @@ public class Movie {
         public Movie() {
         }
 
+        //constructor for movie details activity to get key
+        public Movie(JSONObject jsonObject, Boolean forStream) throws JSONException {
+                this.key = jsonObject.getString("key");
+        }
+
         public Movie(JSONObject jsonObject) throws JSONException {
+                this.id = jsonObject.getInt("id");
                 this.title = jsonObject.getString("title");
                 this.overView = jsonObject.getString("overview");
                 this.posterPath = jsonObject.getString("poster_path");
@@ -32,6 +40,16 @@ public class Movie {
                 List<Movie> movies = new LinkedList<>();
                 for(int i = 0; i < movieJsonArray.length(); i++) {
                         movies.add(new Movie(movieJsonArray.getJSONObject(i)));
+                }
+
+                return  movies;
+        }
+
+        public static List<Movie> getKeyFromJson(JSONArray movieJsonArray) throws JSONException {
+                List<Movie> movies = new LinkedList<>();
+                for(int i = 0; i < movieJsonArray.length(); i++) {
+                        movies.add(new Movie(movieJsonArray.getJSONObject(i), true));
+                        if(!movies.isEmpty()) break; //omly one object is needed
                 }
 
                 return  movies;
@@ -55,5 +73,13 @@ public class Movie {
 
         public Double getVoteAverage() {
                 return voteAverage;
+        }
+
+        public int getId() {
+                return id;
+        }
+
+        public String getKey() {
+                return key;
         }
 }

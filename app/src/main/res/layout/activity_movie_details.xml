@@ -10,26 +10,47 @@
         android:id="@+id/tvTitle2"
         android:layout_width="395dp"
         android:layout_height="116dp"
+        android:gravity="center"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="6dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/posterDetail" />
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
         style="@style/Widget.AppCompat.RatingBar.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="71dp"
+        android:layout_height="12dp"
         android:numStars="5"
         android:stepSize="0.5"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="139dp" />
+        app:layout_constraintBottom_toTopOf="@+id/tvOverView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle2"
+        app:layout_constraintVertical_bias="0.229" />
 
     <TextView
         android:id="@+id/tvOverView"
-        android:layout_width="392dp"
-        android:layout_height="225dp"
+        android:layout_width="407dp"
+        android:layout_height="211dp"
+        android:layout_marginBottom="72dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="221dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbVoteAverage" />
+
+    <ImageView
+        android:id="@+id/posterDetail"
+        android:layout_width="401dp"
+        android:layout_height="220dp"
+        android:onClick="goToTrailer"
+        app:layout_constraintBottom_toTopOf="@+id/tvTitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
