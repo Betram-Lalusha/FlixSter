@@ -27,7 +27,8 @@ The following **additional** features are implemented:
 * [ ] List anything else that you can get done to improve the app functionality!
   * [x] Details page styling
   * [x] Button on poster to give visual cue to user that they can play trailer by clicking button
-  * [x] User can click either poster image or "play trailer" button on details page to play trailer  
+  * [x] User can click either poster image or "play trailer" button on details page to play trailer 
+  * [x] details page responds to landscape orientation 
 
 ## Video Walkthrough
 
